@@ -1,0 +1,48 @@
+server:
+  port: 9296
+
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: ssh://eliudrojas@bitbucket.org/insignios/integracontinua.git
+          clone-on-start: true
+          ignoreLocalSshSettings: true
+          strict_host_key_checking: false
+          skipSslValidation: true
+          password: XXXX!
+          passphrase:
+          search-paths:
+          - configuration/{profile}/{application}
+          - configuration/
+          privateKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEoAIBAAKCAQEAoRtrpnpJT8LSzXo4Qhb2ZBUperV8McLPOQOsQuXQzN7TbA4P
+            7FCD8rb3kZ4NRSWqBw7GX1/LWLJwSsq3P98H9IkxagTxQbeFjOfw1hsSWlqJCzIF
+            Xi2HJGYpGU+whfu/nL7q307qC4NHZ2VG2hWXeYrKYFj5wU05++eheJtRNDtfkQmP
+            kkF7THC5ayUwZnunvLD/mBptfzn0iX0krlA74Lt034kMRJA6w6tWCrFzImjOAUkI
+            GXP8HG5fHlQOzlu9mGV4CowUN6AAi3IOi9ftFGfnTKnjHk/GUV7tXXpzpYVIWOTl
+            tn7EAxj5WDZ51GXoSRPbHMPUgQ3Iht1tPrkqvQIBJQKCAQBxNdzxhl0HnajjaqQS
+            xAcV5Vtq/BIVIRv+jPWWywFtXk9gr++DdtlCxcK5Wk6Dne0Zt1r26V51rdJeEeiN
+            v1GywUVRa0G/egrRt73+PIlv7JenAI4mgNuBXIuVPuq/A+5uJUsZdbk4hcN5Frwq
+            i7aMwmSyaAlzE6w0eUEIpH5AX/Ly1I6fW9ac8KqTY5jZ5makX498dJaEhmEHSPYY
+            50kZNRrWjd6xskxC2SmlnJhqJLFhAVW7F+MNJcfJ3ImGHPQton0aiEoxsHbRPW1h
+            FotLNazmMKx1VLHQLNVZXAYkMxBBHUPMXqX3SzXO3LRMSdBXgGQxylsrZxP2MZYJ
+            PQwlAoGBAObrCnyVnrRUWR1PbEnr6JvdlzbCR3WZyh7UvVgX5TMbzb1emxE3HpqM
+            quUtH4+TPpkjLT6ZpJhrZhYOGhAqt3+Zsk2J9yT5mHZcAUx7JpcnpwHGwdr12Qdv
+            /DYxqK3GzJWYGmnMWXDZPD9e4XPkrtpD37P+GnhJodsOl1kQRs/LAoGBALKbMwzy
+            eLMYwR+FDaCm8o1/B/LMGVzGYdV5Jr0kNZbl+sKKre9fVlsS8slKgc+VpzhxmeMw
+            o4zjPtQiMWJRGJO9whYCNXH3UVdAwLoaOKNkL5bb3deo4K4lca7xk70hXFay5cLR
+            KHqsZ9m1abaW19uwESJhpu4q4xX8Yfm+1o6XAoGAdpRfVLuI2SRlHOOYePyaCtmS
+            1u4ksgLdaccwzF9MLwBwka0fMlqTLMTGda9jO+PUCXLtuFy8TkT9Ej6XwxzaxPvl
+            8HdHj4cW8KvJUMmeMfHEdoiovIwVgFwZuvbn6oiuPvsUe4ScobupUPlfBClS3sjo
+            fwXx6r4HAck49mJN4FMCgYBqMsRokCwXdoCq9SqyjMeSZzUolQgpU1zEHoW8khIG
+            skISzv+jFherxhPRoexR6kfAsj/TMa1asKHl6tFBYKbUYv3H5aM82D4z4U//8+pT
+            UFOlztbu7srIaUqDsjwrRES97dS5Br4fbW4ua9393SZm8xEbXKhx7/ylSfURCbAB
+            wQKBgGnbYISHuXUbFtGjpUx3ft+4//24agOGA6gTQc2MqZjbzPQ4LswDG3SXE38g
+            1UfTII5MRpTQ3lRe6/+QP5lCRxzDGlyCFWEEJy0BB92G8jCJGoLDCmwkNL41afQn
+            Z4ceOAzSmmzOX0/ZDM8gaCmUJYR+uryhb8wg2w554Pg1kExR
+            -----END RSA PRIVATE KEY-----

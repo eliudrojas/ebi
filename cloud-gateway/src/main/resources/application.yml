@@ -1,0 +1,43 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: PERSON-SERVICE
+          uri: lb://PERSON-SERVICE
+          predicates:
+            - Path=/person/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: PERSON-SERVICE
+                fallbackuri: forward:/personServiceFallBack
+
+
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+  metrics:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url: http://localhost:8761/eureka/
+#  instance:
+#    hostname: localhost

@@ -1,0 +1,31 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: PERSON-SERVICE
+  datasource:
+    url: jdbc:h2:mem:ebidb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+    properties:
+      hibernate:
+        jdbc:
+          batch-size: 10
+        order_inserts: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://${OAUTH_SERVER_ADDRESS}:6060/.well-known/jwks.json"
+
+  jackson:
+    deserialization:
+      ACCEPT_SINGLE_VALUE_AS_ARRAY: true
+#  zipkin:
+#    base-url: http://127.0.0.1:9411/

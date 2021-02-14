@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  oauth-server:
+    image: ebi/oauth-server #image's name
+    restart: always
+    container_name: oauth-server
+    ports:
+      - '6060:6060'
+    networks:
+      - ebi-network
+  person-service:
+    image: ebi/person-service #image's name
+    restart: always
+    container_name: person-service
+    ports:
+      - '9002:9002'
+    depends_on:
+      - oauth-server
+    networks:
+      - ebi-network
+networks:
+  ebi-network:
+    driver: bridge

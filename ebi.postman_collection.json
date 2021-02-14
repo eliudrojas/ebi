@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "16f0d08d-a60c-4388-aa9b-301f9c14df74",
+		"name": "ebi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ebi-person-service",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTMzMjk0NjQsInVzZXJfbmFtZSI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiS2JuMGNQa2hGeFdreTdPaWw4ZlZpMEgzUzB3IiwiY2xpZW50X2lkIjoiZWJpLWNsaWVudCIsInNjb3BlIjpbImFueSJdfQ.EvcvWvETuGUT2UjlcOx9zt-leqCOsfaejsc1-Bqza8FGMHvSKjEsey_dEl4ZwUldhayrulRQBMRtn5FEgOYnc57vy81FzUxivTjkzLA6aj-f5Tbhk57h81XIHJpruCtFElOem-1mQi6VZX3rgCMKOaHSV92HFvY2gHf697_9YTSU8eX2cLyO7X6dQ-6Hy5Yq5_NByq1jTcOJ9A_0UU0SFJ_5hiZQ6hMMR1e9_J8MeVQ1iv3rf9c5pvTt77liYNPuVm_CUR8PGOIB_vvmVzFxTQpvcrESZFasjAHxRbCpJkITv8Qrs9GeVPkt_lQsKqPIt6Xy5b3Qc-Ms4MfDBzGTsw",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "any",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "ebipassword",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "ebi-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:6060/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Apisolitiud2",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTMzNTgxMjcsInVzZXJfbmFtZSI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoidzRCcFhPSTU5cnlEbklneExURE9ib0UwLVNzIiwiY2xpZW50X2lkIjoiZWJpLWNsaWVudCIsInNjb3BlIjpbImFueSJdfQ.eRdwKXnjBb_PRv1IaelDPcXNfGVgdzxpqcoSzvP8I273eH6XyvhTUHH7C5uoY9VknAXL60NDCc0EJE9FViuQlGNjle7UZMcyV6VD85Wnlwc1-PkgotVCPfo_NRpN9EVWePZretoEA9mj1ffHF36cxJos1r2Gbu_cPCyDMzhD6V_nYKd2bTP1_q0jJ60GNdNh5mL15R0oBu4r5dFxKUAv5r8aCcgg0sti7HfWnFCZr5uAU228BXotMrGZ_8KMynnVJDrSlAtKplrBeLyb1XTU5OiOy7vGl6m2NoA3FeESFee6aP0v-XVmS_w6_9hmqdkiKZmKmRjf-9pIg_oxV4In1A",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n  \"person\": [ \r\n    { \r\n      \"firstName\": \"John\", \r\n      \"lastName\": \"Keynes\", \r\n      \"age\": \"29\", \r\n      \"favouriteColour\": \"red\" \r\n    }, \r\n    { \r\n      \"firstName\": \"Sarah\", \r\n      \"lastName\": \"Robinson\", \r\n      \"age\": \"54\", \r\n      \"favouriteColour\": \"blue\" \r\n    } \r\n  ] \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/v1/person/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ebi-person-service",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTMzMjk0NjQsInVzZXJfbmFtZSI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiS2JuMGNQa2hGeFdreTdPaWw4ZlZpMEgzUzB3IiwiY2xpZW50X2lkIjoiZWJpLWNsaWVudCIsInNjb3BlIjpbImFueSJdfQ.EvcvWvETuGUT2UjlcOx9zt-leqCOsfaejsc1-Bqza8FGMHvSKjEsey_dEl4ZwUldhayrulRQBMRtn5FEgOYnc57vy81FzUxivTjkzLA6aj-f5Tbhk57h81XIHJpruCtFElOem-1mQi6VZX3rgCMKOaHSV92HFvY2gHf697_9YTSU8eX2cLyO7X6dQ-6Hy5Yq5_NByq1jTcOJ9A_0UU0SFJ_5hiZQ6hMMR1e9_J8MeVQ1iv3rf9c5pvTt77liYNPuVm_CUR8PGOIB_vvmVzFxTQpvcrESZFasjAHxRbCpJkITv8Qrs9GeVPkt_lQsKqPIt6Xy5b3Qc-Ms4MfDBzGTsw",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "any",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "ebipassword",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "ebi-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:6060/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Apisolitiud2",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTMzNTgxMjcsInVzZXJfbmFtZSI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoidzRCcFhPSTU5cnlEbklneExURE9ib0UwLVNzIiwiY2xpZW50X2lkIjoiZWJpLWNsaWVudCIsInNjb3BlIjpbImFueSJdfQ.eRdwKXnjBb_PRv1IaelDPcXNfGVgdzxpqcoSzvP8I273eH6XyvhTUHH7C5uoY9VknAXL60NDCc0EJE9FViuQlGNjle7UZMcyV6VD85Wnlwc1-PkgotVCPfo_NRpN9EVWePZretoEA9mj1ffHF36cxJos1r2Gbu_cPCyDMzhD6V_nYKd2bTP1_q0jJ60GNdNh5mL15R0oBu4r5dFxKUAv5r8aCcgg0sti7HfWnFCZr5uAU228BXotMrGZ_8KMynnVJDrSlAtKplrBeLyb1XTU5OiOy7vGl6m2NoA3FeESFee6aP0v-XVmS_w6_9hmqdkiKZmKmRjf-9pIg_oxV4In1A",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n  \"person\": [ \r\n    { \r\n      \"firstName\": \"John\", \r\n      \"lastName\": \"Keynes\", \r\n      \"age\": \"29\", \r\n      \"favouriteColour\": \"red\" \r\n    }, \r\n    { \r\n      \"firstName\": \"Sarah\", \r\n      \"lastName\": \"Robinson\", \r\n      \"age\": \"54\", \r\n      \"favouriteColour\": \"blue\" \r\n    } \r\n  ] \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/v1/person/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						""
+					]
+				},
+				"description": "EBI TEST"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:6060/oauth/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "ebi-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "ebipassword",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "any",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:6060/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6060",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
