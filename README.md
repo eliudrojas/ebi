@@ -69,3 +69,6 @@ ROOT directory
 	
 POSTMAN	
 	A postman JSON to import is included
+	
+	
+ONLY OAUTH AND PERSONAL-SERVICE PROJECTS ARE NECESSARY FOR THIS TEST
