@@ -2,13 +2,10 @@ package uk.ac.ebi.test.service.impl;
 
 
 import uk.ac.ebi.test.dto.PersonDTO;
-import uk.ac.ebi.test.entity.Person;
 import uk.ac.ebi.test.repository.PersonRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import uk.ac.ebi.test.service.PersonService;
-
-import java.util.List;
 
 @Service
 @Slf4j
@@ -43,5 +40,11 @@ public class PersonServiceImpl implements PersonService {
         return person;
     }
 
+    public PersonDTO getPersonById(Long personId) {
+        log.info("getAllPerson");
+        PersonDTO person = new PersonDTO();
+        person.setPerson(personRepository.findByPersonId(personId));
+        return person;
+    }
 
 }

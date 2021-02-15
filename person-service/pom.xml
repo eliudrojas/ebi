@@ -8,7 +8,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../</relativePath> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>uk.ac.ebi</groupId>
 	<artifactId>person-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>person-service</name>
@@ -49,6 +48,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-jose</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.0.Final</version>
+		</dependency>
+
 		<!-- dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
@@ -76,6 +81,10 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
 		</dependency>
 	</dependencies>
 
