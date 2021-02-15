@@ -47,25 +47,30 @@ Instruccions
 	
  Only was uploaded as part of "Scalability" solution
  
+ Instruccions
  
- Documentation
-	As part of documentation APIARY solution was used
-		URL
-			https://app.apiary.io/
-			
-			USER/PASS to get access are include inside of EMAIL sent it "cremer@ebi.ac.uk"
-			
-			
-			
-Dockerfile
-Inside of  oaut directory
-	docker build -t ebi/oauth-server .
+	 Documentation
+		As part of documentation APIARY solution was used
+			URL
+				https://app.apiary.io/
 
-Inside of  person-service directory
-	docker build -t ebi/person-service .
+				USER/PASS to get access are include inside of EMAIL sent it "cremer@ebi.ac.uk"
+			
+			
+Instruccions
 
-ROOT directory
-	docker-compose up -d
+	Dockerfile
+	Inside of  oaut directory
+		docker build -t ebi/oauth-server .
+
+	Inside of  person-service directory
+		docker build -t ebi/person-service .
+
+	ROOT directory
+		docker-compose up -d
+
+	POSTMAN	
+		A postman JSON to import is included
 	
-POSTMAN	
-	A postman JSON to import is included
+	
+ONLY OAUTH AND PERSONAL-SERVICE PROJECTS ARE NECESSARY FOR THIS TEST
