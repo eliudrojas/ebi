@@ -8,7 +8,7 @@ public interface PersonService {
 
     PersonDTO savePerson(PersonDTO person);
 
-    void deletePerson(PersonDTO person);
+    Integer deletePerson(PersonDTO person);
 
     void updatePerson(PersonDTO person);
 

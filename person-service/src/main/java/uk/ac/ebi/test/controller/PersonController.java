@@ -1,5 +1,6 @@
 package uk.ac.ebi.test.controller;
 
+import ch.qos.logback.core.util.StringCollectionUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import uk.ac.ebi.test.dto.PersonDTO;
@@ -37,13 +38,13 @@ public class PersonController {
 
 
     @PutMapping("/")
-    public ResponseEntity<?>  updatePerson(@Valid @RequestBody PersonDTO person) {
+    public ResponseEntity<PersonDTO>  updatePerson(@Valid @RequestBody PersonDTO person) {
         log.info("Inside updatePerson of PersonController");
         if (person.getPerson().isEmpty()) {
             throw new RecordNotFoundException("Person list is empty");
         }
         personService.savePerson(person);
-        return ResponseEntity.ok("success");
+        return new ResponseEntity(person, HttpStatus.OK);
     }
 
     @DeleteMapping("/")
@@ -52,8 +53,8 @@ public class PersonController {
         if (person.getPerson().isEmpty()) {
             throw new RecordNotFoundException("Person list is empty");
         }
-        personService.deletePerson(person);
-        return ResponseEntity.ok("success");
+        int count = personService.deletePerson(person);
+        return new ResponseEntity(String.format("%d persons deleted", count), HttpStatus.OK);
     }
 
     @GetMapping("/")

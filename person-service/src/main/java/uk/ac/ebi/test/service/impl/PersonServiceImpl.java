@@ -2,6 +2,7 @@ package uk.ac.ebi.test.service.impl;
 
 
 import uk.ac.ebi.test.dto.PersonDTO;
+import uk.ac.ebi.test.entity.Person;
 import uk.ac.ebi.test.repository.PersonRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,9 +24,16 @@ public class PersonServiceImpl implements PersonService {
         return person;
     }
 
-    public void deletePerson(PersonDTO person) {
+    public Integer deletePerson(PersonDTO person) {
         log.info("deletePerson");
-        personRepository.deleteAll(person.getPerson());
+        Integer count = 0;
+        for (Person p: person.getPerson()) {
+            if (personRepository.findById(p.getPersonId()) != null) {
+                personRepository.deleteById(p.getPersonId());
+                count++;
+            }
+        }
+        return count;
     }
 
     public void updatePerson(PersonDTO person) {
